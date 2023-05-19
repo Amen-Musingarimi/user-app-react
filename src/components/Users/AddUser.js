@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import classes from './AddUser.module.css';
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredUserAge, setEnteredUserAge] = useState('');
 
@@ -21,7 +21,7 @@ const AddUser = () => {
       return;
     }
 
-    console.log(enteredUsername, enteredUserAge);
+    props.onAddUser(enteredUsername, enteredUserAge);
     setEnteredUsername('');
     setEnteredUserAge('');
   };
